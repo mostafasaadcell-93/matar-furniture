@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17130F">
+<title>Matar Furniture</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Matar Furniture, Gallery Matar. Luxury and comfort: exclusive salons, living rooms, bedrooms and dining rooms in Lebanon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: Citifurniture's page structure (hero slider, latest products, about band, gallery, offers, get in touch, two-tier footer; shop with left accordion) in Rital's own palette: wine + logo grey + a warm sand taken from their Instagram highlights. */
+:root{
+  --bg:#FFFFFF;
+  --ink:#231D1D;
+  --muted:#6F6866;
+  --line:#ECE5E3;
+  --stone:#F6F2F1;
+  --wine:#8C1C21;
+  --wine-deep:#6A1418;
+  --wine-soft:#F8EDED;
+  --grey:#7B7777;
+  --grey-deep:#5E5A5A;
+  --sand:#E2C29F;
+  --sand-soft:#F4E7DA;
+  --wa:#1E9E52;
+  --white:#FFFFFF;
+  --black:#141111;
+  --f-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Inter","Segoe UI",sans-serif;
+  --f-body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Inter","Segoe UI",sans-serif;
+  --r:12px;
+  --wrap:1200px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+img{display:block}
+:focus-visible{outline:2px solid var(--wine);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;letter-spacing:-.022em;line-height:1.1;text-wrap:balance;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.title{text-align:center;color:var(--wine);text-transform:uppercase;font-size:clamp(1.9rem,4vw,3rem);font-weight:700;letter-spacing:-.01em}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;padding:.85em 1.5em;border-radius:6px;border:1.5px solid transparent;font-weight:700;font-size:.92rem;transition:background .2s,color .2s,filter .2s,transform .2s;white-space:nowrap}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-wine{background:var(--wine);color:var(--white)}
+.btn-wine:hover{background:var(--wine-deep)}
+.btn-grey{background:var(--grey-deep);color:var(--white)}
+.btn-grey:hover{background:var(--ink)}
+.btn-sand{background:var(--sand);color:var(--ink)}
+.btn-sand:hover{filter:brightness(.94)}
+.btn-wa{background:var(--wa);color:var(--white)}
+.btn-wa:hover{filter:brightness(.92)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--white)}
+.btn.pill{border-radius:999px}
+.btn.sm{padding:.6em 1em;font-size:.84rem}
+.btn.full{width:100%}
+.btn-explore{background:var(--wine);color:var(--white);border-radius:999px;padding:1.05em 2.6em;font-size:1.05rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+.btn-explore:hover{background:var(--wine-deep);transform:translateY(-2px)}
+.icon-btn{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;color:var(--grey);background:transparent;border:0;transition:color .2s,background .2s;flex:none}
+.icon-btn:hover{color:var(--wine);background:var(--wine-soft)}
+.icon-btn svg{width:22px;height:22px}
+
+/* Home decoration (Citi-style corner blobs) */
+.deco{position:absolute;inset:0 0 auto 0;height:760px;pointer-events:none;z-index:0;display:none}
+body.is-home .deco{display:block}
+.deco svg{position:absolute}
+.blob-tl{left:0;top:0;width:clamp(200px,24vw,330px);height:auto}
+.blob-dot{left:clamp(220px,22vw,320px);top:120px;width:34px;height:34px}
+.blob-tr{right:0;top:0;width:clamp(120px,15vw,230px);height:auto}
+
+/* Header */
+.hdr{position:relative;z-index:5}
+.hdr-in{display:flex;align-items:center;gap:1.5rem;height:116px}
+.logo{display:flex;align-items:center;gap:.75rem;flex:none}
+.logo svg{width:84px;height:28px}
+.wm{display:flex;flex-direction:column;line-height:1}
+.wm b{font-family:var(--f-display);font-weight:800;font-size:1.1rem;letter-spacing:.14em;color:var(--wine)}
+.wm small{font-size:.64rem;letter-spacing:.06em;color:var(--muted);margin-top:.35rem}
+.nav{display:flex;align-items:center;gap:.4rem;margin-left:auto}
+.nav>a,.dd>a{display:inline-flex;align-items:center;gap:.3rem;padding:.5rem .9rem;font-weight:500;font-size:1.08rem;color:var(--wine);transition:color .2s}
+.nav>a:hover,.dd>a:hover,.nav a.on{color:var(--grey-deep)}
+.nav a.on{text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px;text-decoration-color:var(--sand)}
+.dd{position:relative}
+.dd>a svg{width:13px;height:13px}
+.dd-menu{position:absolute;top:100%;left:0;min-width:230px;background:var(--white);border-top:2px solid var(--wine);box-shadow:0 18px 40px -16px rgba(60,20,20,.25);padding:.4rem 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:20}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:none}
+.dd-item{position:relative}
+.dd-item>a{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:.5rem;align-items:center;padding:.5rem 1rem .5rem .8rem;color:var(--wine);font-size:.95rem}
+.dd-item>a:hover{background:var(--wine-soft)}
+.dd-item>a svg{width:12px;height:12px;transform:rotate(180deg);opacity:.7}
+.dd-sub{position:absolute;right:100%;top:-.4rem;min-width:210px;background:var(--white);border-top:2px solid var(--wine);box-shadow:0 18px 40px -16px rgba(60,20,20,.25);padding:.4rem 0;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.dd-item:hover .dd-sub,.dd-item:focus-within .dd-sub{opacity:1;visibility:visible}
+.dd-sub a{display:block;padding:.45rem 1rem;font-size:.92rem;color:var(--ink)}
+.dd-sub a:hover{background:var(--wine-soft);color:var(--wine)}
+.socials{display:flex;gap:.1rem;margin-left:.6rem}
+.burger{display:none;width:44px;height:44px;border-radius:8px;border:1.5px solid var(--line);background:var(--white);place-items:center;margin-left:auto}
+.burger svg{width:22px;height:22px}
+.mnav{display:none;position:relative;z-index:6}
+
+/* Hero slider */
+main{position:relative;z-index:1}
+.slider{position:relative;padding-block:.5rem 1.2rem}
+.slides{display:grid}
+.slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
+.slide.on{opacity:1;visibility:visible}
+.slide-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center;padding-left:max(90px,env(safe-area-inset-left,0px));padding-right:max(90px,env(safe-area-inset-right,0px))}
+.slide-copy{display:grid;gap:1.1rem;justify-items:start;min-width:0}
+.slide-copy h1,.slide-copy h2{color:var(--wine);font-size:clamp(2.3rem,4.6vw,3.9rem);letter-spacing:-.035em;line-height:1.04}
+.slide-copy p{color:var(--wine);font-size:1.12rem;max-width:36ch;opacity:.9}
+.slide-copy .btn-explore{margin-top:.6rem}
+.slide-img{background:var(--stone);aspect-ratio:520/400;max-width:100%;overflow:hidden;position:relative}
+.slide-img svg{width:100%;height:100%;display:block}
+.s-arrow{position:absolute;top:50%;transform:translateY(-60%);width:54px;height:54px;border-radius:50%;border:3px solid var(--wine);background:rgba(255,255,255,.85);color:var(--wine);display:grid;place-items:center;z-index:3;transition:background .2s,color .2s}
+.s-arrow:hover{background:var(--wine);color:var(--white)}
+.s-arrow svg{width:24px;height:24px}
+.s-arrow.prev{left:max(18px,env(safe-area-inset-left,0px))}
+.s-arrow.next{right:max(18px,env(safe-area-inset-right,0px))}
+.slider-foot{position:relative;height:96px;margin-top:-30px;overflow:hidden}
+.slider-foot .wedge{position:absolute;right:0;bottom:0;width:62%;height:84px;background:var(--grey);clip-path:path("M0 84 C 80 84 70 0 200 0 L 2000 0 L 2000 84 Z")}
+.slider-foot .circ{position:absolute;left:8%;bottom:-36px;width:90px;height:90px;border-radius:50%;background:var(--wine)}
+.dots{display:flex;justify-content:center;gap:.5rem;padding-block:1rem}
+.dots button{width:12px;height:12px;border-radius:50%;border:0;background:#C9C3C1;padding:0;transition:background .2s,transform .2s}
+.dots button.on{background:var(--wine);transform:scale(1.15)}
+.dots.small button{width:9px;height:9px}
+
+/* Section shell */
+.sec{padding-block:clamp(2.6rem,5vw,4.5rem)}
+.sec .title{margin-bottom:clamp(1.8rem,4vw,3rem)}
+
+/* Product carousel + cards */
+.car{position:relative}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3.6rem)/4);gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track>*{scroll-snap-align:start}
+.c-arrow{position:absolute;top:calc(var(--img-h,50%) / 2);transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--wine);display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.12);z-index:2}
+.c-arrow svg{width:18px;height:18px}
+.c-arrow.prev{left:12px}
+.c-arrow.next{right:12px}
+.pcard{display:flex;flex-direction:column;min-width:0}
+.pcard-img{display:block;position:relative;background:var(--stone);aspect-ratio:1;overflow:hidden}
+.pcard-img svg,.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.pcard:hover .pcard-img svg,.pcard:hover .pcard-img img{transform:scale(1.05)}
+.badge{position:absolute;top:10px;left:10px;background:var(--wine);color:var(--white);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .55rem;border-radius:4px}
+.pcard-body{padding:.9rem .1rem 0;display:flex;flex-direction:column;gap:.2rem;flex:1}
+.pcard-cat{font-size:.84rem;color:var(--muted)}
+.pcard-name{font-family:var(--f-body);font-weight:600;letter-spacing:-.01em;font-size:1.06rem;color:var(--wine)}
+.pcard-name a:hover{text-decoration:underline;text-underline-offset:3px}
+.pcard-actions{display:flex;margin-top:auto;padding-top:.7rem}
+.pcard-actions .btn{width:100%}
+
+/* About band */
+.about-band{background:var(--wine);color:var(--white);position:relative;overflow:hidden}
+.about-band .c1{position:absolute;left:-14%;top:-55%;width:min(560px,48vw);aspect-ratio:1;border-radius:50%;background:var(--grey)}
+.about-band .c2{position:absolute;right:-10%;bottom:-48%;width:min(520px,44vw);aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--sand),#C9A27E)}
+.about-band .wrap{position:relative;z-index:1;text-align:center;display:grid;justify-items:center;gap:1.2rem;padding-block:clamp(3rem,6vw,4.5rem)}
+.about-band h2{text-transform:uppercase;font-size:clamp(2rem,4vw,3rem)}
+.about-band p{max-width:46ch;font-size:1.15rem;line-height:1.55}
+.about-band .btn{margin-top:1.2rem;text-transform:uppercase;letter-spacing:.04em}
+
+/* Gallery category tiles */
+.cat-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2rem)/3);gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;max-width:1100px;margin:0 auto}
+.cat-track::-webkit-scrollbar{display:none}
+.cat-tile{scroll-snap-align:start;background:var(--grey);color:var(--white);display:grid;place-items:center;min-height:100px;padding:1rem;font-size:clamp(1.15rem,2vw,1.5rem);font-weight:600;letter-spacing:-.01em;text-align:center;transition:background .2s}
+.cat-tile:hover{background:var(--wine)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.4rem;max-width:1100px;margin:2.6rem auto 0}
+.center{text-align:center;margin-top:2.4rem}
+
+/* Offers banner */
+.offer{background:var(--wine);color:var(--white);position:relative;overflow:hidden}
+.offer-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) auto;align-items:center;min-height:250px;gap:1rem}
+.offer-left h2{text-transform:uppercase;font-size:clamp(2rem,3.6vw,3rem);line-height:1.05}
+.offer-left p{margin-top:1rem;font-size:1.15rem;opacity:.9;font-weight:300}
+.offer-mid{align-self:stretch;display:grid;place-items:center;text-align:center;position:relative;padding:1.6rem 3rem}
+.offer-mid::before{content:"";position:absolute;inset:0;background:var(--grey);clip-path:polygon(18% 0,100% 0,82% 100%,0 100%);z-index:0}
+.offer-mid h3{position:relative;text-transform:uppercase;font-size:clamp(1.6rem,3.6vw,3rem);line-height:1.08;max-width:15ch}
+.offer-right svg{width:90px;height:90px;color:var(--sand)}
+
+/* Get in touch */
+.git-head{background:var(--grey);color:var(--white);text-align:center;padding-block:2.4rem}
+.git-head h2{text-transform:uppercase;font-size:clamp(1.9rem,3.6vw,2.8rem)}
+.git{background:var(--wine);padding-block:3rem 4.5rem}
+.git form{max-width:740px;margin:0 auto;display:grid;gap:.75rem}
+.git input,.git textarea{width:100%;border:0;border-radius:2px;padding:1.05rem 1rem;background:#FAF8F8;font-weight:500;outline:0}
+.git input:focus,.git textarea:focus{box-shadow:0 0 0 3px var(--sand)}
+.git textarea{min-height:130px;resize:vertical}
+.git .btn{justify-self:start;margin-top:.4rem;text-transform:uppercase}
+.git .form-err{color:var(--sand)}
+.git .ready{background:rgba(255,255,255,.12);color:var(--white)}
+
+/* Footer */
+.foot{background:var(--wine);color:var(--white)}
+.foot-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:2rem;padding-block:2.6rem 2.4rem}
+.foot h4{font-size:1.3rem;font-weight:600;margin-bottom:1rem}
+.foot-social{display:grid;gap:.35rem;justify-items:start}
+.foot-social a{color:var(--sand);display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.92rem}
+.foot-social svg{width:22px;height:22px}
+.foot-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem 1.4rem}
+.foot-links a{font-weight:600;font-size:.95rem}
+.foot-links a:hover{color:var(--sand)}
+.foot-bar{background:var(--black);color:var(--white);text-align:center;padding-block:1.3rem;font-size:.86rem;font-weight:600;letter-spacing:.02em}
+
+/* Page head (inner pages) */
+.crumbs{font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.35rem}
+.crumbs a:hover{color:var(--wine)}
+.page-title{color:var(--wine);font-weight:500;font-size:clamp(2.2rem,4vw,3.1rem);letter-spacing:-.03em;margin:.8rem 0 1.6rem}
+
+/* Shop (Citi: left search + accordion, right grid) */
+.shop{display:grid;grid-template-columns:250px minmax(0,1fr);gap:2.6rem;padding-block:1.6rem 4.5rem;align-items:start}
+.side{border-right:1px solid var(--line);padding-right:1.4rem;display:grid;grid-template-columns:minmax(0,1fr);gap:1.4rem;align-content:start;min-width:0}
+.side>*{min-width:0}
+.shop>div{min-width:0}
+.side-search{display:flex;gap:.5rem;min-width:0}
+.side-search input{flex:1 1 0;width:100%;min-width:0;border:0;padding:.75rem .8rem;border-radius:4px;font-size:.92rem;background:var(--grey-deep);color:var(--white);caret-color:var(--white)}
+.side-search input::placeholder{color:rgba(255,255,255,.72)}
+.side-search input:focus{outline:0;box-shadow:0 0 0 2px var(--sand)}
+.side-search input::-webkit-search-cancel-button{filter:invert(1)}
+.search-go{flex:none;width:44px;border:0;border-radius:4px;background:var(--wine);color:var(--white);display:grid;place-items:center;transition:background .2s}
+.search-go:hover{background:var(--wine-deep)}
+.search-go svg{width:19px;height:19px}
+.acc{background:var(--wine);color:var(--white)}
+.acc-row{display:flex;align-items:center;justify-content:space-between}
+.acc-row a{flex:1;min-width:0;padding:.85rem 0 .85rem 1.1rem;font-weight:600;font-size:.95rem}
+.acc-row a.on{text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--sand)}
+.acc-row button{flex:none;background:transparent;border:0;color:var(--white);width:44px;height:46px;font-size:1.3rem;font-weight:400}
+.acc-row button:hover{background:rgba(255,255,255,.1)}
+.acc-row+.acc-subs+.acc-row,.acc-subs[hidden]+.acc-row{border-top:1px solid rgba(255,255,255,.12)}
+.acc-subs{background:#FFF;padding:.3rem 0}
+.acc-subs a{display:flex;justify-content:space-between;padding:.4rem 1.2rem;color:var(--ink);font-size:.9rem}
+.acc-subs a:hover,.acc-subs a.on{color:var(--wine);background:var(--wine-soft)}
+.acc-subs small,.acc-row small{opacity:.7;font-variant-numeric:tabular-nums}
+.shop-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.count{font-size:.92rem;font-weight:600}
+.sel{border:1px solid #D8D2D0;padding:.55rem .8rem;border-radius:2px;background:var(--white);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.2rem}
+.shop .grid{grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
+.pager{display:flex;gap:.4rem;justify-content:center;margin-top:2.6rem;flex-wrap:wrap}
+.pager button{min-width:40px;height:40px;border:1px solid var(--line);background:var(--white);border-radius:4px;font-weight:600}
+.pager button.on{background:var(--wine);border-color:var(--wine);color:var(--white)}
+.empty{grid-column:1/-1;background:var(--stone);padding:2.4rem;text-align:center;display:grid;gap:.8rem;justify-items:center}
+.chips{display:none}
+
+/* Product page */
+.pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,3.6rem);padding-block:1rem 3.5rem;align-items:start}
+.pd-stage{background:var(--stone);aspect-ratio:4/3;overflow:hidden}
+.pd-stage svg,.pd-stage img{width:100%;height:100%;object-fit:cover}
+.pd-thumbs{display:flex;gap:.6rem;margin-top:.7rem;flex-wrap:wrap}
+.pd-thumbs button{width:76px;aspect-ratio:4/3;overflow:hidden;border:2px solid transparent;padding:0;background:var(--stone)}
+.pd-thumbs button.on{border-color:var(--wine)}
+.pd-thumbs img{width:100%;height:100%;object-fit:cover}
+.pd-info{display:grid;gap:1.1rem;min-width:0}
+.pd-info h1{color:var(--wine);font-weight:500;font-size:clamp(2rem,3.6vw,2.8rem);letter-spacing:-.03em}
+.code{font-size:.82rem;font-weight:600;letter-spacing:.06em;color:var(--grey);font-variant-numeric:tabular-nums}
+.pd-cta{display:flex;flex-wrap:wrap;gap:.6rem}
+.meta{font-size:.92rem}
+.meta a{color:var(--wine)}
+.tabs{border-top:1px solid var(--line);padding-top:1rem}
+.tab-label{display:inline-block;font-weight:700;color:var(--wine);border-bottom:2px solid var(--wine);padding-bottom:.4rem;margin-bottom:1rem;font-size:.95rem}
+.tabs p{color:var(--muted);margin-bottom:.9rem}
+.specs{margin:0;display:grid;gap:.7rem}
+.specs dt{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.specs dd{margin:.15rem 0 0;color:var(--muted);font-size:.95rem}
+.swatches{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.35rem}
+.swatch{display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .75rem .3rem .35rem;border:1.5px solid var(--line);border-radius:999px;background:var(--white);font-size:.84rem;font-weight:600}
+.swatch i{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.swatch.on{border-color:var(--wine);color:var(--wine)}
+.related h2{font-size:1.6rem;margin-bottom:1.4rem}
+
+/* About page */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.about-grid p{color:var(--muted);max-width:56ch}
+.about-grid p+p{margin-top:1rem}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+.value{text-align:center;display:grid;justify-items:center;gap:.6rem}
+.value h3{color:var(--wine);font-size:1.3rem}
+.value p{color:var(--muted);font-size:.95rem;max-width:30ch}
+
+/* Contact (Citi: icon cards, centered form, map) */
+.c-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem;padding-block:3.2rem 2rem}
+.c-card{text-align:center;display:grid;justify-items:center;gap:.55rem;align-content:start;min-width:0}
+.c-ico{width:104px;height:104px;border-radius:50%;background:#F1F0F0;display:grid;place-items:center;color:var(--wine);margin-bottom:.8rem}
+.c-ico svg{width:44px;height:44px}
+.c-card h3{color:var(--wine);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.6rem}
+.c-card p{font-size:.93rem;overflow-wrap:anywhere}
+.mini{font-size:.82rem;font-weight:700;color:var(--wine);background:var(--wine-soft);border:0;border-radius:999px;padding:.35rem .8rem}
+.mini:hover{background:#F1DADA}
+.c-form{max-width:1130px;margin:0 auto;padding-block:2rem 3.5rem;display:grid;gap:.7rem}
+.c-form .title{margin-bottom:1.4rem}
+.c-form input,.c-form textarea,.c-form select{width:100%;border:1px solid #E4E0DF;border-radius:3px;padding:.8rem .9rem;background:#F9F9F9;font-weight:500;outline:0}
+.c-form input:focus,.c-form textarea:focus,.c-form select:focus{border-color:var(--wine);background:var(--white)}
+.c-form textarea{min-height:130px;resize:vertical}
+.c-form .btn{text-transform:uppercase;padding-block:1.1em;font-size:1rem}
+.map{position:relative;background:#E8EEF2;min-height:340px;overflow:hidden;display:grid;place-items:center}
+.map svg.mapbg{position:absolute;inset:0;width:100%;height:100%}
+.map-card{position:relative;background:var(--white);border-radius:8px;padding:1.2rem 1.4rem;box-shadow:0 10px 30px -10px rgba(0,0,0,.25);text-align:center;display:grid;gap:.5rem;justify-items:center;margin:20px}
+.map-card b{color:var(--wine)}
+
+/* Forms shared */
+.form-err{color:var(--wine);font-size:.88rem;font-weight:600}
+.ready{background:#EEF8F2;border-radius:8px;padding:1rem;display:grid;gap:.7rem;font-size:.92rem;justify-items:start}
+.field{display:grid;gap:.35rem;min-width:0}
+.field label{font-size:.8rem;font-weight:700}
+.field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:.75rem .9rem;background:var(--white);outline:0}
+.field input:focus,.field select:focus{border-color:var(--wine)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:20px}
+.modal-backdrop{position:absolute;inset:0;background:rgba(34,20,20,.5)}
+.modal-card{position:relative;background:var(--white);border-radius:14px;width:min(460px,100%);max-height:calc(100% - 20px);overflow:auto;padding:1.8rem;display:grid;gap:1rem;box-shadow:0 30px 60px -20px rgba(0,0,0,.4)}
+.modal-card h2{color:var(--wine);font-size:1.7rem}
+.modal-card form{display:grid;gap:.85rem}
+.modal-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:0;background:var(--stone);font-size:1.3rem;line-height:1}
+.modal-sub{color:var(--muted);font-size:.92rem;margin-top:.3rem}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+
+/* Floating buttons */
+.totop{position:fixed;right:calc(26px + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:45;width:38px;height:38px;border-radius:3px;border:0;background:var(--wine);color:var(--white);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.totop.show{opacity:1;visibility:visible}
+.totop svg{width:20px;height:20px}
+
+#view{animation:fade .35s ease}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+
+/* Responsive */
+@media (max-width:1000px){
+  .nav,.socials{display:none}
+  .burger{display:grid}
+  .hdr-in{height:84px}
+  .mnav{display:block;border-top:1px solid var(--line);background:var(--white)}
+  .mnav[hidden]{display:none}
+  .mnav .wrap{display:grid;padding-block:.6rem 1.2rem}
+  .mnav a{padding:.7rem .2rem;font-weight:600;color:var(--wine);border-bottom:1px solid var(--line)}
+  .mnav a.sub{color:var(--ink);font-weight:500;padding-left:1rem;font-size:.94rem}
+  .mnav .btn{margin-top:.9rem;border-bottom:0;color:var(--white)}
+  .slide-in{grid-template-columns:minmax(0,1fr);padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .slide-img{order:-1}
+  .s-arrow{top:28%;width:44px;height:44px}
+  .track{grid-auto-columns:calc((100% - 1.2rem)/2)}
+  .cat-track{grid-auto-columns:calc((100% - 1rem)/2)}
+  .gal-grid,.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .offer-in{grid-template-columns:minmax(0,1fr);padding-block:2.4rem;text-align:center}
+  .offer-right{display:none}
+  .offer-mid{padding:2rem 2.4rem}
+  .foot-in{grid-template-columns:minmax(0,1fr)}
+  .foot-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .shop{grid-template-columns:minmax(0,1fr);gap:1rem}
+  .side{display:none}
+  .chips{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.4rem;margin-bottom:.8rem}
+  .chips a{flex:none;padding:.5rem .95rem;border:1.5px solid var(--line);font-size:.86rem;font-weight:700;white-space:nowrap;color:var(--wine)}
+  .chips a.on{background:var(--wine);border-color:var(--wine);color:var(--white)}
+  .mob-search{display:flex}
+  .pd,.about-grid{grid-template-columns:minmax(0,1fr)}
+  .c-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .blob-dot{display:none}
+}
+@media (min-width:1001px){.mob-search{display:none}}
+@media (max-width:640px){
+  .wm small{display:none}
+  .slide-copy h1,.slide-copy h2{font-size:2.1rem}
+  .slide-copy p{font-size:1rem}
+  .btn-explore{padding:.9em 2em;font-size:.95rem}
+  .track{grid-auto-columns:78%}
+  .cat-track{grid-auto-columns:70%}
+  .gal-grid,.grid{gap:1.4rem .8rem}
+  .pcard-actions .btn{font-size:.78rem;padding:.6em .5em}
+  .values,.c-cards{grid-template-columns:minmax(0,1fr)}
+  .row2{grid-template-columns:minmax(0,1fr)}
+  .blob-tr{width:90px}
+}
+@media (max-width:640px){.shop .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:360px){.gal-grid,.grid,.shop .grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+
+/* ---- real catalog ---- */
+img[data-src]{opacity:0;transition:opacity .35s}
+img[data-src].ld{opacity:1}
+.slide-img img,.about-grid .slide-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pcard-img.contain,.pd-stage.contain{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.pcard-img.contain img{object-fit:contain;padding:7%}
+/* Rital photos carry their name and text inside the picture: always show the whole photo */
+.slide-img{aspect-ratio:3/2;background:transparent}
+.slide-img img,.about-grid .slide-img img{object-fit:contain}
+.pcard-img{aspect-ratio:4/3}
+.pcard-img img,.pd-stage img{object-fit:contain}
+.pcard:hover .pcard-img img{transform:scale(1.03)}
+/* phones and tablets: same menu as desktop, no burger */
+@media (max-width:1000px){
+  .burger,.mnav,.mnav[hidden]{display:none!important}
+  .hdr-in{height:auto;flex-wrap:wrap;gap:.5rem 1rem;padding-block:1rem .2rem}
+  .nav{display:flex;width:100%;margin-left:0;justify-content:space-between;gap:0;border-top:1px solid var(--line);padding-top:.3rem}
+  .nav>a,.dd>a{font-size:.95rem;padding:.6rem .3rem}
+  .dd-menu{display:none}
+  .socials{display:flex;margin-left:0}
+  .socials .icon-btn{width:38px;height:38px}
+}
+@media (max-width:1000px){.nav>a,.dd>a{white-space:nowrap}}
+@media (max-width:700px){
+  .deco,body.is-home .deco{display:none}
+  .hdr-in{padding-top:.9rem}
+  .nav>a,.dd>a{font-size:.92rem;padding:.6rem .2rem}
+}
+@media (max-width:380px){.nav>a,.dd>a{font-size:.85rem;padding:.6rem .1rem}.dd>a svg,.nav .socials{display:none}}
+/* ---- cart ---- */
+.cart-btn{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;border:0;background:var(--wine);color:var(--white);flex:none;margin-left:.4rem;transition:background .2s}
+.cart-btn:hover{background:var(--wine-deep)}
+.cart-btn svg{width:22px;height:22px}
+.cart-n{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--sand);color:var(--ink);font-size:.72rem;font-weight:800;display:grid;place-items:center;border:2px solid var(--white)}
+.cart-n[hidden]{display:none}
+.pcard-actions{gap:.45rem}
+.pcard-actions .btn.btn-add{width:44px;flex:none;padding:0;background:var(--wine);color:var(--white)}
+.btn-add:hover{background:var(--wine-deep)}
+.btn-add svg{width:20px;height:20px}
+.btn svg{flex:none}
+.pd-buy{display:flex;gap:.6rem;flex-wrap:wrap;align-items:stretch}
+.pd-buy .btn{flex:1;min-width:180px}
+.pd-buy .btn svg{width:20px;height:20px}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;background:var(--white);height:34px}
+.qty button{width:32px;height:100%;border:0;background:transparent;font-size:1.1rem;font-weight:700;color:var(--wine)}
+.qty button:hover{background:var(--wine-soft)}
+.qty span{min-width:28px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.qty.big{height:auto;min-height:48px}
+.qty.big button{width:44px}
+.qty.big span{min-width:36px;font-size:1.05rem}
+.drawer{position:fixed;inset:0;z-index:90}
+.drawer[hidden]{display:none}
+.drawer-bg{position:absolute;inset:0;background:rgba(34,20,20,.5);animation:fadeIn .2s}
+.drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--white);display:flex;flex-direction:column;box-shadow:-20px 0 50px -20px rgba(0,0,0,.35);animation:slideIn .25s ease-out}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.3rem;border-bottom:1px solid var(--line)}
+.drawer-head h2{font-size:1.35rem;color:var(--wine)}
+.drawer-head h2 span{color:var(--muted);font-weight:600;font-size:1rem}
+.drawer-head .modal-x{position:static}
+.drawer-body{flex:1;overflow:auto;padding:1rem 1.3rem 1.6rem;display:grid;gap:1.2rem;align-content:start}
+.ci{display:grid;grid-template-columns:84px 1fr auto;gap:.85rem;align-items:start;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.ci-img,.oi-img{position:relative;display:block;aspect-ratio:4/3;background:var(--stone);border-radius:6px;overflow:hidden}
+.ci-img img,.oi-img img{width:100%;height:100%;object-fit:contain}
+.ci-img.contain,.oi-img.contain{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.ci-img .pc,.oi-img .pc{font-size:.62rem;right:.25rem;bottom:.25rem;padding:0 .25rem}
+.ci-body{display:grid;gap:.3rem;min-width:0}
+.ci-body .qty{justify-self:start;margin-top:.15rem}
+.ci-name,.oi-name{font-weight:700;color:var(--wine);line-height:1.25}
+.ci-name:hover,.oi-name:hover{text-decoration:underline}
+.ci-meta{font-size:.82rem;color:var(--muted)}
+.ci-x{border:0;background:transparent;font-size:1.5rem;line-height:1;color:var(--muted);width:32px;height:32px;border-radius:50%}
+.ci-x:hover{background:var(--wine-soft);color:var(--wine)}
+.cart-empty{display:grid;justify-items:center;gap:.8rem;text-align:center;padding:2.5rem 0;color:var(--muted)}
+.cart-empty svg{width:46px;height:46px;color:var(--line)}
+#cartForm{display:grid;gap:.85rem}
+#cartForm h3{font-size:1.05rem}
+.cart-sent{background:#EEF8F2;border-radius:10px;padding:1.1rem;display:grid;gap:.9rem;font-size:.95rem}
+.cart-sent-cta{display:flex;gap:.5rem;flex-wrap:wrap}
+body.no-scroll{overflow:hidden}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;z-index:95;background:var(--ink);color:var(--white);border-radius:10px;padding:.75rem .8rem .75rem 1.1rem;display:flex;align-items:center;gap:1rem;box-shadow:0 18px 40px -12px rgba(0,0,0,.4);transition:opacity .25s,transform .25s;max-width:calc(100% - 32px);font-size:.9rem}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast[hidden]{display:none}
+.toast button{border:0;background:var(--sand);color:var(--ink);font-weight:800;border-radius:6px;padding:.5rem .8rem;white-space:nowrap;font-size:.84rem}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.order-page{padding-bottom:4rem;max-width:900px}
+.order-sum{margin:-.6rem 0 1.4rem}
+.order-list{display:grid;border-top:1px solid var(--line)}
+.oi{display:grid;grid-template-columns:28px 130px 1fr auto;gap:1rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--line)}
+.oi-n{font-weight:800;color:var(--muted)}
+.oi-body{display:grid;gap:.3rem;min-width:0}
+.oi-name{font-size:1.08rem}
+.oi-q{display:grid;justify-items:center;min-width:56px}
+.oi-q small{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.oi-q b{font-size:1.4rem;color:var(--wine)}
+.order-cta{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
+.order-cta .btn svg{width:20px;height:20px}
+@media (max-width:1000px){
+  .logo{flex-basis:100%;padding-bottom:.7rem;border-bottom:1px solid var(--line)}
+  .nav{order:2;width:auto;flex:1;min-width:0;border-top:0;padding-top:0}
+  .cart-btn{order:3;margin-left:.4rem;width:42px;height:42px}
+  .nav .socials{display:none}
+}
+@media (max-width:560px){
+  .toast{left:16px;right:16px;max-width:none;transform:translateY(20px)}
+  .toast.show{transform:none}
+}
+.toast span{flex:1;min-width:0}
+@media (max-width:360px){.nav>a,.dd>a{font-size:.8rem;padding:.6rem .18rem}.cart-btn{width:38px;height:38px}.cart-btn svg{width:19px;height:19px}}
+
+@media (max-width:560px){
+  .oi{grid-template-columns:22px 96px 1fr;gap:.7rem}
+  .oi-q{grid-column:3;justify-items:start;display:flex;gap:.4rem;align-items:baseline}
+  .oi-q b{font-size:1.1rem}
+  .pcard-actions .btn.btn-add{width:38px}
+}
+.c-card .sr{display:flex;gap:.6rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.c-card .sr .mini{margin:0}
+.map-btns{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+.wa-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:-.3rem}
+.pd-stage.contain img{object-fit:contain;padding:3%}
+.pd-stage{position:relative}
+.pd-thumbs button{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.pd-thumbs img{object-fit:contain}
+.pcount{position:absolute;left:.55rem;bottom:.55rem;background:rgba(255,255,255,.94);color:var(--wine);font-size:.72rem;font-weight:700;padding:.22rem .6rem;border-radius:999px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.subchips{display:flex;flex-wrap:wrap;gap:.45rem;margin:-.3rem 0 1.4rem}
+.subchips a{padding:.42rem .85rem;border:1.5px solid var(--line);border-radius:999px;font-size:.84rem;font-weight:600;color:var(--wine);background:var(--white)}
+.subchips a:hover{border-color:var(--wine)}
+.subchips a.on{background:var(--wine);border-color:var(--wine);color:var(--white)}
+.pager .gap{min-width:28px;display:grid;place-items:center;color:var(--muted);font-weight:700}
+.pager button{display:inline-grid;place-items:center}
+.pager button svg{width:16px;height:16px}
+.pager button:disabled{opacity:.35;cursor:default}
+.cat-tile{position:relative;overflow:hidden;min-height:150px;isolation:isolate}
+.cat-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;transition:opacity .35s,transform .45s}
+.cat-tile img.ld{opacity:.32}
+.cat-tile:hover img{transform:scale(1.06)}
+.cat-tile span{position:relative;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.swatch{padding:.38rem .85rem}
+.specs dd{line-height:1.6}
+.pc{position:absolute;right:.5rem;bottom:.5rem;font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:.78rem;color:#1d1d1f;background:rgba(255,255,255,.88);padding:.08rem .38rem;border-radius:3px;letter-spacing:.02em;font-variant-numeric:tabular-nums;pointer-events:none}
+.pd-stage .pc{font-size:1rem;right:.8rem;bottom:.7rem}
+.pcard-img .pc{z-index:1}
+@media (max-width:900px){.subchips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:.3rem}.subchips a{flex:none;white-space:nowrap}}
+
+/* ---- Matar brand: black + gold, serif display ---- */
+:root{--wine:#17130F;--wine-deep:#000;--wine-soft:#F3EDE2;--grey:#8C7B5A;--grey-deep:#6E6046;--sand:#C6A15B;--sand-soft:#F1E8D8;--stone:#F8F5EF;--line:#E8E0D2;--f-display:"Cormorant Garamond",Georgia,"Times New Roman",serif}
+body{background:#FCFAF6}
+h1,h2,h3,h4{letter-spacing:0}
+.title{font-weight:600;letter-spacing:.06em}
+.title::after{content:"";display:block;width:56px;height:2px;background:var(--sand);margin:.7rem auto 0}
+.slide-copy h1,.slide-copy h2{font-weight:600}
+.btn-explore{background:var(--sand);color:#17130F}
+.btn-explore:hover{background:#B08C47}
+.about-band h2,.offer h2,.foot h4{color:var(--sand)}
+.logo svg{width:44px;height:44px}
+.wm b{font-family:var(--f-display);font-weight:700;font-size:1.45rem;letter-spacing:.2em;color:#17130F}
+.wm small{color:var(--grey);letter-spacing:.24em;text-transform:uppercase;font-size:.62rem;font-weight:700}
+.nav a.on{text-decoration-color:var(--sand)}
+.pcard-name,.pd-info h1{font-family:var(--f-display);font-weight:700}
+.pd-info h1{letter-spacing:.01em}
+</style>
+</head>
+<body>
+
+<div class="deco" aria-hidden="true">
+  <svg class="blob-tl" viewBox="0 0 330 210"><path d="M0 0 H330 C 330 60 290 70 260 80 C 210 96 230 170 170 200 C 150 210 120 210 0 210 Z" fill="#F1E8D8"/></svg>
+  <svg class="blob-dot" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="#C6A15B"/></svg>
+  <svg class="blob-tr" viewBox="0 0 230 270"><path d="M230 0 V270 H40 C 10 270 0 250 0 220 C 0 160 40 150 90 140 C 160 126 150 40 170 0 Z" fill="#17130F"/></svg>
+</div>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a href="#home" class="logo" aria-label="Matar Furniture home">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><g fill="none" stroke="#C6A15B" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M12 7h20v15H12z"/><path d="M8 16h4v13H8zM32 16h4v13h-4z"/><path d="M12 22h20v7H12z"/><path d="M10 29v8M34 29v8M12 34h20"/></g></svg>
+      <span class="wm"><b>MATAR</b><small>Furniture · Gallery Matar</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#about" data-nav="about">About us</a>
+      <div class="dd">
+        <a href="#shop" data-nav="shop">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dd-menu" id="ddMenu"></div>
+      </div>
+      <a href="#contact" data-nav="contact">Contact us</a>
+      <div class="socials" id="socials"></div>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mnav" id="mnav" hidden><div class="wrap" id="mnavIn"></div></div>
+</header>
+
+<main id="view"></main>
+
+<footer id="foot"></footer>
+
+<button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 15 6-6 6 6"/></svg></button>
+
+<script src="data/catalog.js"></script>
+<script>
+/* ================================================================
+   SITE CONFIG  (edit here)
+   ================================================================ */
+const CONFIG = {
+  brand: "Matar Furniture",
+  siteUrl: "https://matar-furniture.vercel.app/",   // links inside WhatsApp messages point here
+  whatsapp: "96178793138",
+  whatsappDisplay: "+961 78 793 138",
+  instagram: "https://www.instagram.com/matar.furniture/",
+  instagramHandle: "@matar.furniture",
+  showroom: "Gallery Matar",
+  area: "Lebanon",
+  showrooms: [
+    { name: "Gallery Matar", maps: "https://www.google.com/maps/search/?api=1&query=Matar+Furniture+Lebanon" }
+  ],
+  hours: "Mon to Sat: 10:00 AM to 7:00 PM",
+  regions: ["Beirut","Mount Lebanon","North Lebanon","South Lebanon","Bekaa","Nabatieh"],
+  offer: { label:"Exclusive designs", sub:"Luxury & comfort for every room", big:"Visit Gallery Matar" }
+};
+
+// Hero slides (product ids from the catalog)
+const SLIDES = [
+  { title:"Luxury & Comfort", text:"Welcome to Gallery Matar: exclusive salons and living rooms, made for comfort and built to last.", link:"#shop-living", id:"in-wy18" },
+  { title:"Bedrooms you'll love waking up in", text:"Beds and complete bedrooms in timeless designs, with delivery across Lebanon.", link:"#shop-bedrooms", id:"in-4849" },
+  { title:"Dining rooms for every gathering", text:"Dining sets, tables and chairs for long family lunches and dinners with friends.", link:"#shop-dining", id:"in-6326-6771" }
+];
+const LATEST = [];
+
+/* ================================================================
+   CATALOG (loaded from data/catalog.js)
+   ================================================================ */
+const DATA = window.RITAL_DATA || { cats: [], products: [] };
+const CATS = DATA.cats;
+const PRODUCTS = DATA.products.filter(p => !p.hide);   // hidden = draft in the admin
+const SUBS = {}, BYID = {};
+CATS.forEach(c => c.subs.forEach(([id, name]) => SUBS[id] = { id, name, cat: c }));
+PRODUCTS.forEach((p, i) => { BYID[p.id] = p; p._i = i; p._s = (p.name + " " + p.code + " " + SUBS[p.sub].name + " " + SUBS[p.sub].cat.name + " " + (p.coll || "") + " " + (p.color || "") + " " + (p.colors || []).map(c => c.n).join(" ") + " " + [].concat(p.pc || []).join(" ")).toLowerCase(); });
+
+/* ---------- images: plain files, or packed data (preview build) ---------- */
+const IMG_BASE = window.RITAL_IMG_BASE || "img/";
+const PACKS = window.RITAL_PACKS || null;
+const packLoads = {};
+function loadPack(name) {
+  if (!packLoads[name]) packLoads[name] = new Promise((res, rej) => { const s = document.createElement("script"); s.src = "data/" + name; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
+  return packLoads[name];
+}
+function srcFor(file, cb) {
+  if (!PACKS) return cb(IMG_BASE + file);
+  const store = window.RITAL_IMG || (window.RITAL_IMG = {});
+  if (store[file]) return cb(store[file]);
+  const pk = PACKS[file]; if (!pk) return;
+  loadPack(pk).then(() => { if (store[file]) cb(store[file]); }, () => {});
+}
+function setSrc(el) { srcFor(el.dataset.src, u => { el.src = u; el.classList.add("ld"); }); }
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); setSrc(e.target); } }), { rootMargin: "400px 400px" }) : null;
+function hydrate(root = document) { root.querySelectorAll("img[data-src]:not(.ld)").forEach(el => io ? io.observe(el) : setSrc(el)); }
+// photo names: "name" means name.webp + name-s.webp; admin uploads may be "name.jpg" + "name-s.jpg"
+const fileOf = (f, s) => /\.(webp|jpe?g|png)$/i.test(f) ? (s ? f.replace(/(\.[a-z]+)$/i, "-s$1") : f) : f + (s ? "-s.webp" : ".webp");
+const big = (p, i = 0) => fileOf(p.imgs[i], 0);
+const small = (p, i = 0) => fileOf(p.imgs[i], 1);
+const isRital = p => p.src === "rital";
+const pcAt = (p, i = 0) => p.pc ? (Array.isArray(p.pc) ? p.pc[i] || p.pc[0] : p.pc) : "";
+const pcTag = (p, i = 0, id = "") => pcAt(p, i) ? `<span class="pc"${id ? ` id="${id}"` : ""}>${esc(pcAt(p, i))}</span>` : (id ? `<span class="pc" id="${id}" hidden></span>` : "");
+
+/* ================================================================
+   HELPERS
+   ================================================================ */
+const esc = s => String(s ?? "").replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+const waLink = (text) => "https://wa.me/" + CONFIG.whatsapp + (text ? "?text=" + encodeURIComponent(text) : "");
+const linkFor = p => CONFIG.siteUrl + "#p-" + p.id;
+const refOf = p => isRital(p) ? ` (${p.code})` : "";
+const msgCall = (p, color) => `Hello ${CONFIG.brand}, I'd like to know more about the ${p.name}${refOf(p)}${color ? " in " + color : ""}. Can you call me back?\n${linkFor(p)}`;
+const callLink = (p, color) => waLink(msgCall(p, color));
+const msgOrder = (p, color) => `Hello ${CONFIG.brand}, I'm interested in the ${p.name}${refOf(p)}${color ? ", color: " + color : ""}. Can you send me the price and availability?\n${linkFor(p)}`;
+const countIn = (id) => SUBS[id] ? PRODUCTS.filter(p => p.sub === id).length : PRODUCTS.filter(p => SUBS[p.sub].cat.id === id).length;
+const town = (j = "and") => { const n = CONFIG.showrooms.map(x => x.name); return n.length > 1 ? n.slice(0, -1).join(", ") + " " + j + " " + n[n.length - 1] : n[0]; };
+
+const ICON = {
+  ig:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>`,
+  left:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`,
+  right:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`,
+  chevL:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>`,
+  chevR:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>`,
+  home:`<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 1.5 12h3v9h6v-6h3v6h6v-9h3L18 9V4h-3v2.4z"/></svg>`,
+  clock:`<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.6 3.6 2.1-1 1.7L11 13.4V6h2z"/></svg>`,
+  phone:`<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>`,
+  cart:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg>`,
+  plusCart:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/><path d="M12 12.5v5M9.5 15h5" stroke-linecap="round"/></svg>`,
+  bags:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M8 20h28l-2 38H10z"/><path d="M15 20v-5a7 7 0 0 1 14 0v5"/><path d="M30 32h24l-2 26H28"/><path d="M36 32v-4a6 6 0 0 1 12 0v4"/></svg>`
+};
+
+/* ================================================================
+   CART (kept in this browser, sent as one WhatsApp message)
+   ================================================================ */
+const CART_KEY = "matar-cart-v1";
+let cart = [];
+try { cart = (JSON.parse(localStorage.getItem(CART_KEY) || "[]") || []).filter(x => x && BYID[x.id]); } catch (_) { cart = []; }
+function saveCart() { try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (_) {} renderCartBadge(); }
+const cartCount = () => cart.reduce((n, x) => n + x.q, 0);
+const colorIdx = (p, ci) => p.colors && p.colors[ci] ? ci : -1;
+const colorOf = it => { const p = BYID[it.id]; return it.c >= 0 && p.colors ? p.colors[it.c].n : (p.color || ""); };
+const imgIdx = it => { const p = BYID[it.id]; return it.c >= 0 && p.colors ? p.colors[it.c].i : 0; };
+function addToCart(id, ci, q = 1) {
+  const p = BYID[id]; if (!p) return;
+  const c = p.colors ? colorIdx(p, ci ?? 0) : -1;
+  const it = cart.find(x => x.id === id && x.c === c);
+  if (it) it.q = Math.min(99, it.q + q); else cart.push({ id, c, q: Math.min(99, q) });
+  saveCart(); renderCart();
+  toast(`<b>${esc(p.name)}</b>${c >= 0 ? " · " + esc(p.colors[c].n) : ""} added to your cart`);
+}
+// order link: id_qty[_color].id_qty[_color]  (only letters, digits, - _ . so WhatsApp keeps the whole link clickable)
+const orderCode = items => items.map(it => `${it.id}_${it.q}${it.c >= 0 ? "_" + it.c : ""}`).join(".");
+function parseOrder(code) {
+  return String(code || "").split(".").map(t => { const [id, q, c] = t.split("_"); return { id, q: Math.max(1, Math.min(99, parseInt(q, 10) || 1)), c: c === undefined ? -1 : parseInt(c, 10) }; })
+    .filter(it => BYID[it.id]).map(it => ({ ...it, c: colorIdx(BYID[it.id], it.c) }));
+}
+function cartMessage(f) {
+  const lines = [`Hello ${CONFIG.brand}, I'd like to order:`, ""];
+  cart.forEach((it, i) => {
+    const p = BYID[it.id], col = colorOf(it);
+    lines.push(`${i + 1}. ${p.name}${refOf(p)}${col ? " · " + col : ""}`, `Qty: ${it.q}`, linkFor(p), "");
+  });
+  const n = cartCount();
+  lines.push(`Full order (${cart.length} ${cart.length === 1 ? "item" : "items"}, ${n} ${n === 1 ? "piece" : "pieces"}):`, CONFIG.siteUrl + "#order=" + orderCode(cart), "");
+  lines.push(`Name: ${f.name}`, `Phone: ${f.phone}`, `Location: ${f.region}`);
+  if (f.address) lines.push(`Address: ${f.address}`);
+  if (f.notes) lines.push(`Notes: ${f.notes}`);
+  return lines.join("\n");
+}
+function renderCartBadge() {
+  const n = cartCount();
+  document.querySelectorAll("[data-cart-n]").forEach(el => { el.textContent = n > 99 ? "99+" : n; el.hidden = !n; });
+}
+function renderCart() {
+  const list = document.getElementById("cartList"); if (!list) return;
+  document.getElementById("cartTitleN").textContent = cart.length ? `(${cartCount()})` : "";
+  document.getElementById("cartForm").hidden = !cart.length;
+  list.innerHTML = cart.length ? cart.map((it, i) => {
+    const p = BYID[it.id], col = colorOf(it), k = imgIdx(it);
+    return `<div class="ci">
+      <a class="ci-img${isRital(p) ? "" : " contain"}" href="#p-${p.id}" data-cart-close><img data-src="${small(p, k)}" alt="">${pcTag(p, k)}</a>
+      <div class="ci-body">
+        <a class="ci-name" href="#p-${p.id}" data-cart-close>${esc(p.name)}</a>
+        <p class="ci-meta">${isRital(p) ? esc(p.code) : "Model " + esc(p.code)}${col ? " · " + esc(col) : ""}</p>
+        <div class="qty" role="group" aria-label="Quantity"><button type="button" data-cq="${i}" data-d="-1" aria-label="Less">−</button><span>${it.q}</span><button type="button" data-cq="${i}" data-d="1" aria-label="More">+</button></div>
+      </div>
+      <button type="button" class="ci-x" data-cx="${i}" aria-label="Remove ${esc(p.name)}">&times;</button>
+    </div>`; }).join("")
+    : `<div class="cart-empty">${ICON.cart}<p>Your cart is empty.</p><a class="btn btn-wine sm pill" href="#shop" data-cart-close>Browse products</a></div>`;
+  hydrate(list);
+}
+const drawer = () => document.getElementById("cartDrawer");
+function openCart() { renderCart(); document.getElementById("cartSent").hidden = true; drawer().hidden = false; document.body.classList.add("no-scroll"); }
+function closeCart() { drawer().hidden = true; document.body.classList.remove("no-scroll"); }
+let toastTimer = null;
+function toast(html) {
+  const t = document.getElementById("toast");
+  t.innerHTML = `<span>${html}</span><button type="button" data-cart-open>View cart</button>`;
+  t.hidden = false; requestAnimationFrame(() => t.classList.add("show"));
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.hidden = true, 300); }, 3200);
+}
+
+/* ================================================================
+   SHARED PARTS
+   ================================================================ */
+function card(p) {
+  const s = SUBS[p.sub], href = "#p-" + p.id;
+  const nCol = p.colors ? p.colors.length : 0;
+  return `<article class="pcard">
+    <a class="pcard-img${isRital(p) ? "" : " contain"}" href="${href}" aria-label="${esc(p.name)}"><img data-src="${small(p)}" alt="${esc(p.name)}">${nCol ? `<span class="pcount">${nCol} colors</span>` : ""}${pcTag(p)}</a>
+    <div class="pcard-body">
+      <p class="pcard-cat">${esc(s.name)}</p>
+      <h3 class="pcard-name"><a href="${href}">${esc(p.name)}</a></h3>
+      <div class="pcard-actions">
+        <a class="btn btn-grey sm" href="${callLink(p, p.color)}" target="_blank" rel="noopener">${ICON.phone} Request A Call</a>
+        <button class="btn btn-add sm" data-add="${esc(p.id)}" aria-label="Add ${esc(p.name)} to cart" title="Add to cart">${ICON.plusCart}</button>
+      </div>
+    </div>
+  </article>`;
+}
+const latestCard = (p) => `<a class="pcard" href="#p-${p.id}"><span class="pcard-img${isRital(p) ? "" : " contain"}"><img data-src="${small(p)}" alt="${esc(p.name)}">${pcTag(p)}</span><span class="pcard-body"><span class="pcard-cat">${esc(SUBS[p.sub].name)}</span><span class="pcard-name">${esc(p.name)}</span></span></a>`;
+function crumbs(items) {
+  return `<nav class="crumbs" aria-label="Breadcrumb">${items.map((it, i) => (i ? `<span>/</span>` : "") + (it[1] ? `<a href="${it[1]}">${esc(it[0])}</a>` : `<span>${esc(it[0])}</span>`)).join("")}</nav>`;
+}
+function carousel(id, items, arrows) {
+  return `<div class="car" data-car="${id}">
+    <div class="${id === "cats" ? "cat-track" : "track"}" id="${id}">${items}</div>
+    ${arrows ? `<button class="c-arrow prev" data-car-go="${id}" data-dir="-1" aria-label="Previous">${ICON.chevL}</button><button class="c-arrow next" data-car-go="${id}" data-dir="1" aria-label="Next">${ICON.chevR}</button>` : ""}
+  </div><div class="dots small" id="${id}-dots"></div>`;
+}
+function offerBanner() {
+  const o = CONFIG.offer; if (!o) return "";
+  return `<section class="offer"><div class="wrap offer-in">
+    <div class="offer-left"><h2>${esc(o.label)}</h2><p>${esc(o.sub)}</p></div>
+    <div class="offer-mid"><h3>${esc(o.big)}</h3></div>
+    <div class="offer-right">${ICON.bags}</div>
+  </div></section>`;
+}
+function getInTouch() {
+  return `<section class="git-head"><div class="wrap"><h2>Get in touch</h2></div></section>
+  <section class="git"><div class="wrap">
+    <form id="msgForm" novalidate>
+      <input id="gName" placeholder="Your Name" autocomplete="name" aria-label="Your name">
+      <input id="gPhone" type="tel" inputmode="tel" placeholder="Phone" autocomplete="tel" aria-label="Phone">
+      <input id="gSubject" placeholder="Subject" aria-label="Subject">
+      <textarea id="gMsg" placeholder="Your Message" aria-label="Your message"></textarea>
+      <p class="form-err" id="gErr" hidden></p>
+      <button class="btn btn-sand pill" type="submit">Send your message</button>
+      <div class="ready" id="gReady" hidden><span>Your message is ready.</span><a class="btn btn-wa" id="gSend" target="_blank" rel="noopener" href="#">Send on WhatsApp</a></div>
+    </form>
+  </div></section>`;
+}
+
+/* ================================================================
+   VIEWS
+   ================================================================ */
+function viewHome() {
+  const feat = PRODUCTS.filter(p => p.feat);   // "Show on home page" in the admin
+  const latest = feat.length ? feat : LATEST.map(id => BYID[id]).filter(Boolean);
+  const tiles = CATS.flatMap(c => c.subs.map(([id, name]) => { const f = PRODUCTS.find(p => p.sub === id); return { id, name, f }; }));
+  const showcase = ["corner-sofas","sofa-beds","recliners","armchairs","beds","dining-sets","coffee-tables","tv-units"].map(s => PRODUCTS.find(p => p.sub === s)).filter(Boolean);
+  return `
+  <section class="slider" id="slider" aria-roledescription="carousel" aria-label="Featured">
+    <div class="slides">${SLIDES.map((s, i) => { const p = BYID[s.id]; return `
+      <div class="slide ${i ? "" : "on"}" aria-hidden="${i ? "true" : "false"}">
+        <div class="wrap slide-in" style="max-width:1400px">
+          <div class="slide-copy">
+            ${i ? `<h2>${esc(s.title)}</h2>` : `<h1>${esc(s.title)}</h1>`}
+            <p>${esc(s.text)}</p>
+            <a class="btn btn-explore" href="${s.link}" ${i ? 'tabindex="-1"' : ""}>Explore</a>
+          </div>
+          <div class="slide-img">${p ? `<img data-src="${big(p)}" alt="${esc(p.name)}">` : ""}</div>
+        </div>
+      </div>`; }).join("")}
+    </div>
+    <button class="s-arrow prev" data-slide="-1" aria-label="Previous slide">${ICON.left}</button>
+    <button class="s-arrow next" data-slide="1" aria-label="Next slide">${ICON.right}</button>
+  </section>
+  <div class="slider-foot" aria-hidden="true"><span class="circ"></span><span class="wedge"></span></div>
+  <div class="dots" id="slideDots">${SLIDES.map((_, i) => `<button class="${i ? "" : "on"}" data-goto="${i}" aria-label="Slide ${i + 1}"></button>`).join("")}</div>
+
+  <section class="sec"><div class="wrap">
+    <h2 class="title">Our latest products</h2>
+    ${carousel("latest", latest.map(latestCard).join(""), true)}
+  </div></section>
+
+  <section class="about-band"><span class="c1"></span><span class="c2"></span><div class="wrap">
+    <h2>About us</h2>
+    <p>Welcome to Matar Furniture, home of Gallery Matar. Luxury, comfort and exclusive designs for your salon, living room, bedroom and dining room, with delivery across Lebanon.</p>
+    <a class="btn btn-sand" href="#about">Read more</a>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <h2 class="title">Our gallery</h2>
+    ${carousel("cats", tiles.map(t => `<a class="cat-tile" href="#shop-${t.id}">${t.f ? `<img data-src="${small(t.f)}" alt="" class="${isRital(t.f) ? "" : "contain"}">` : ""}<span>${esc(t.name)}</span></a>`).join(""), true)}
+    <div class="gal-grid">${showcase.map(card).join("")}</div>
+    <div class="center"><a class="btn btn-wine pill" href="#shop">View all ${PRODUCTS.length.toLocaleString()} products</a></div>
+  </div></section>
+
+  ${offerBanner()}
+  ${getInTouch()}`;
+}
+
+const PER_PAGE = 24;
+let shopState = { filter: null, q: "", sort: "featured", page: 1 };
+function viewShop(filter) {
+  if (shopState.filter !== filter) shopState.page = 1;
+  shopState.filter = filter;
+  const sub = filter && SUBS[filter], cat = filter && (sub ? sub.cat : CATS.find(c => c.id === filter));
+  const title = sub ? sub.name : cat ? cat.name : "Shop";
+  const trail = [["Home", "#home"]];
+  if (!filter) trail.push(["Shop", null]);
+  else { trail.push(["Shop", "#shop"]); if (sub) trail.push([cat.name, "#shop-" + cat.id]); trail.push([title, null]); }
+  const openCat = cat ? cat.id : null;
+  const side = `<aside class="side" aria-label="Categories">
+    <form class="side-search" data-search><input id="q" type="search" placeholder="Search products…" value="${esc(shopState.q)}" aria-label="Search products"><button class="search-go" type="submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></button></form>
+    <div class="acc">${CATS.map(c => `
+      <div class="acc-row"><a href="#shop-${c.id}" class="${filter === c.id ? "on" : ""}">${esc(c.name)} <small>(${countIn(c.id)})</small></a><button data-acc="${c.id}" aria-expanded="${openCat === c.id}" aria-label="Show ${esc(c.name)} subcategories">${openCat === c.id ? "−" : "+"}</button></div>
+      <div class="acc-subs" id="acc-${c.id}" ${openCat === c.id ? "" : "hidden"}>${c.subs.map(([id, n]) => `<a href="#shop-${id}" class="${filter === id ? "on" : ""}">${esc(n)} <small>${countIn(id)}</small></a>`).join("")}</div>`).join("")}
+    </div>
+  </aside>`;
+  const chips = `<div class="chips"><a href="#shop" class="${!filter ? "on" : ""}">All</a>${CATS.map(c => `<a href="#shop-${c.id}" class="${(cat && cat.id === c.id) ? "on" : ""}">${esc(c.name)}</a>`).join("")}</div>`;
+  const subChips = cat ? `<div class="subchips">${cat.subs.map(([id, n]) => `<a href="#shop-${id}" class="${filter === id ? "on" : ""}">${esc(n)}</a>`).join("")}</div>` : "";
+  return `
+  <section class="wrap shop">
+    ${side}
+    <div>
+      ${crumbs(trail)}
+      <h1 class="page-title">${esc(title)}</h1>
+      ${chips}${subChips}
+      <form class="side-search mob-search" data-search style="margin-bottom:1rem"><input id="q2" type="search" placeholder="Search products…" value="${esc(shopState.q)}" aria-label="Search products"><button class="search-go" type="submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></button></form>
+      <div class="shop-bar">
+        <p class="count" id="count"></p>
+        <select class="sel" id="sort" aria-label="Sort">
+          <option value="featured" ${shopState.sort === "featured" ? "selected" : ""}>Sort by featured</option>
+          <option value="az" ${shopState.sort === "az" ? "selected" : ""}>Sort by name: A to Z</option>
+          <option value="code" ${shopState.sort === "code" ? "selected" : ""}>Sort by product code</option>
+        </select>
+      </div>
+      <div class="grid" id="grid"></div>
+      <nav class="pager" id="pager" aria-label="Pages"></nav>
+    </div>
+  </section>`;
+}
+function pageList(n, cur) {
+  if (n <= 7) return Array.from({ length: n }, (_, i) => i + 1);
+  const s = new Set([1, n, cur, cur - 1, cur + 1]); if (cur <= 3) [2, 3, 4].forEach(x => s.add(x)); if (cur >= n - 2) [n - 1, n - 2, n - 3].forEach(x => s.add(x));
+  const arr = [...s].filter(x => x >= 1 && x <= n).sort((a, b) => a - b), out = [];
+  arr.forEach((x, i) => { if (i && x - arr[i - 1] > 1) out.push(0); out.push(x); });
+  return out;
+}
+function renderGrid() {
+  const g = document.getElementById("grid"); if (!g) return;
+  const { filter, q, sort } = shopState;
+  let list = PRODUCTS.filter(p => !filter || p.sub === filter || SUBS[p.sub].cat.id === filter);
+  const terms = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (terms.length) list = list.filter(p => terms.every(t => p._s.includes(t)));
+  list = list.slice();
+  if (sort === "az") list.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+  else if (sort === "code") list.sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
+  const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+  if (shopState.page > pages) shopState.page = pages;
+  const start = (shopState.page - 1) * PER_PAGE, shown = list.slice(start, start + PER_PAGE);
+  document.getElementById("count").textContent = list.length
+    ? (list.length === 1 ? "Showing 1 result" : list.length <= PER_PAGE ? `Showing all ${list.length} results` : `Showing ${start + 1}–${start + shown.length} of ${list.length.toLocaleString()} results`)
+    : "No results";
+  g.innerHTML = shown.length ? shown.map(card).join("") : `<div class="empty"><h3>No products match “${esc(q)}”</h3><p class="muted">Try another name or code, or ask us directly. We may have it in the showroom.</p><a class="btn btn-wa sm" href="${waLink("Hello " + CONFIG.brand + ", I'm looking for: " + q)}" target="_blank" rel="noopener">Ask on WhatsApp</a></div>`;
+  const cur = shopState.page;
+  document.getElementById("pager").innerHTML = pages > 1
+    ? `<button data-page="${cur - 1}" ${cur === 1 ? "disabled" : ""} aria-label="Previous page">${ICON.chevL}</button>` +
+      pageList(pages, cur).map(x => x ? `<button class="${x === cur ? "on" : ""}" data-page="${x}" ${x === cur ? 'aria-current="page"' : ""}>${x}</button>` : `<span class="gap">…</span>`).join("") +
+      `<button data-page="${cur + 1}" ${cur === pages ? "disabled" : ""} aria-label="Next page">${ICON.chevR}</button>`
+    : "";
+  hydrate(g);
+}
+
+let pdColor = null, pdProduct = null;
+function viewProduct(id) {
+  const p = BYID[id];
+  if (!p) return `<section class="wrap" style="padding-block:4rem"><h1 class="page-title">Product not found</h1><p class="muted">This product may have been moved. <a href="#shop" style="color:var(--wine);font-weight:700">Browse the shop</a></p></section>`;
+  pdProduct = p;
+  const s = SUBS[p.sub];
+  pdColor = p.colors ? p.colors[0].n : (p.color || null);
+  const same = PRODUCTS.filter(x => x.sub === p.sub && x !== p);
+  const k = same.findIndex(x => x._i > p._i);
+  const related = (k < 0 ? same.slice(-4) : same.slice(Math.max(0, k - 2), Math.max(0, k - 2) + 4)).slice(0, 4);
+  const multi = p.imgs.length > 1;
+  return `
+  <section class="wrap pd">
+    <div class="pd-media">
+      <div class="pd-stage${isRital(p) ? "" : " contain"}" id="pdStage"><img id="pdImg" data-src="${big(p)}" alt="${esc(p.name)}">${pcTag(p, 0, "pdPc")}</div>
+      ${multi ? `<div class="pd-thumbs">${p.imgs.map((f, i) => `<button class="${i ? "" : "on"}" data-img="${i}" aria-label="Photo ${i + 1}"><img data-src="${small(p, i)}" alt=""></button>`).join("")}</div>` : ""}
+    </div>
+    <div class="pd-info">
+      ${crumbs([["Home", "#home"], [s.cat.name, "#shop-" + s.cat.id], [s.name, "#shop-" + s.id], [p.name, null]])}
+      <h1>${esc(p.name)}</h1>
+      <p class="code">${isRital(p) ? `REF ${esc(p.code)} · ${esc(p.coll || "Rital Collection")}` : `MODEL ${esc(p.code)}`}</p>
+      ${p.colors ? `<div><p class="meta" style="margin-bottom:.45rem">Color: <b id="pdColorName">${esc(pdColor)}</b></p><div class="swatches">${p.colors.map((c, i) => `<button class="swatch ${i ? "" : "on"}" data-color="${i}">${esc(c.n)}</button>`).join("")}</div></div>` : ""}
+      <div class="pd-buy">
+        <div class="qty big" role="group" aria-label="Quantity"><button type="button" data-pq="-1" aria-label="Less">−</button><span id="pdQty">1</span><button type="button" data-pq="1" aria-label="More">+</button></div>
+        <button class="btn btn-wine" data-add-pd="${esc(p.id)}">${ICON.cart} Add to cart</button>
+      </div>
+      <div class="pd-cta">
+        <a class="btn btn-grey" id="pdCall" href="${callLink(p, pdColor)}" target="_blank" rel="noopener">${ICON.phone} Request A Call</a>
+        <a class="btn btn-wa" id="pdWa" href="${waLink(msgOrder(p, pdColor))}" target="_blank" rel="noopener">Order on WhatsApp</a>
+      </div>
+      <p class="meta">Category: <a href="#shop-${s.id}">${esc(s.name)}</a></p>
+      <div class="tabs">
+        <span class="tab-label">Description</span>
+        <dl class="specs">
+          ${p.color && !p.colors ? `<div><dt>Color</dt><dd>${esc(p.color)}</dd></div>` : ""}
+          ${p.dims ? `<div><dt>Dimensions</dt><dd>${p.dims.map(esc).join("<br>")}</dd></div>` : ""}
+          ${p.info ? `<div><dt>Details</dt><dd>${p.info.map(esc).join("<br>")}</dd></div>` : ""}
+          ${isRital(p) ? `<div><dt>Collection</dt><dd>${esc(p.coll)} by Rital Furniture</dd></div>` : ""}
+          <div><dt>Price &amp; delivery</dt><dd>Price on request · Delivery across Lebanon</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+  ${related.length ? `<section class="wrap related" style="padding-bottom:4rem"><h2>Related products</h2><div class="grid">${related.map(card).join("")}</div></section>` : ""}`;
+}
+
+function viewOrder(code) {
+  const items = parseOrder(code);
+  const n = items.reduce((a, x) => a + x.q, 0);
+  return `
+  <section class="wrap order-page">
+    ${crumbs([["Home", "#home"], ["Order", null]])}
+    <h1 class="page-title">Order</h1>
+    ${items.length ? `<p class="muted order-sum">${items.length} ${items.length === 1 ? "item" : "items"} · ${n} ${n === 1 ? "piece" : "pieces"}</p>
+    <div class="order-list">${items.map((it, i) => { const p = BYID[it.id], k = imgIdx(it), col = colorOf(it), s = SUBS[p.sub]; return `
+      <div class="oi">
+        <span class="oi-n">${i + 1}</span>
+        <a class="oi-img${isRital(p) ? "" : " contain"}" href="#p-${p.id}"><img data-src="${small(p, k)}" alt="">${pcTag(p, k)}</a>
+        <div class="oi-body">
+          <a class="oi-name" href="#p-${p.id}">${esc(p.name)}</a>
+          <p class="ci-meta">${isRital(p) ? esc(p.code) + " · " + esc(p.coll) : "Model " + esc(p.code)} · ${esc(s.name)}</p>
+          ${col ? `<p class="ci-meta">Color: <b>${esc(col)}</b></p>` : ""}
+        </div>
+        <div class="oi-q"><small>Qty</small><b>${it.q}</b></div>
+      </div>`; }).join("")}</div>
+    <div class="order-cta"><button class="btn btn-wine pill" data-order-add="${esc(code)}">${ICON.cart} Add these to my cart</button><a class="btn btn-ghost pill" href="#shop">Keep browsing</a></div>`
+    : `<p class="muted">This order link is empty or out of date. <a href="#shop" style="color:var(--wine);font-weight:700">Browse products</a></p>`}
+  </section>`;
+}
+
+function viewAbout() {
+  const hero = BYID["rf-sl-09"] || PRODUCTS[0];
+  return `
+  <section class="wrap" style="padding-top:1rem">${crumbs([["Home", "#home"], ["About us", null]])}<h1 class="page-title">About us</h1></section>
+  <section class="wrap about-grid" style="padding-bottom:3.5rem">
+    <div>
+      <p>Welcome to Matar Furniture, home of Gallery Matar. We bring luxury and comfort together in exclusive designs: salons, unique sofas, living rooms, bedrooms and dining rooms chosen for quality that lasts.</p>
+      <p>Visit Gallery Matar to see the collection in person, or browse it here and request a call. We deliver across Lebanon.</p>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.6rem"><a class="btn btn-wine pill" href="#shop">Browse products</a><a class="btn btn-ghost pill" href="#contact">Contact us</a></div>
+    </div>
+    <div class="slide-img"><img data-src="${big(hero)}" alt="${esc(hero.name)}"></div>
+  </section>
+  <section class="sec" style="background:var(--stone)"><div class="wrap">
+    <h2 class="title">Why Matar</h2>
+    <div class="values">
+      <div class="value"><span class="c-ico">${ICON.home}</span><h3>Exclusive designs</h3><p>Salons, unique sofas, bedrooms and dining rooms you won't find everywhere, all at Gallery Matar.</p></div>
+      <div class="value"><span class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5zm-1.3 14.2-3.9-3.9 1.4-1.4 2.5 2.5 5.3-5.3 1.4 1.4z"/></svg></span><h3>${PRODUCTS.length.toLocaleString()} products</h3><p>Living rooms, bedrooms and dining rooms, all in one place.</p></div>
+      <div class="value"><span class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h11v10H3zM15 9h4l3 3.5V16h-7zM7 19.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></span><h3>Delivery across Lebanon</h3><p>From Beirut to the South, the North and the Bekaa, we bring your furniture home.</p></div>
+    </div>
+  </div></section>
+  ${offerBanner()}`;
+}
+
+function viewContact() {
+  return `
+  <section class="wrap"><div class="c-cards">
+    <div class="c-card"><span class="c-ico">${ICON.home}</span><h3>Showrooms</h3><p>${esc(CONFIG.showroom)}</p>${CONFIG.showrooms.map(r => `<p class="sr"><b>${esc(r.name)}</b> <a class="mini" href="${r.maps}" target="_blank" rel="noopener">Get directions</a></p>`).join("")}</div>
+    <div class="c-card"><span class="c-ico">${ICON.phone}</span><h3>Phone &amp; WhatsApp</h3><p id="waNum">${esc(CONFIG.whatsappDisplay)}</p><p>Orders, prices and delivery</p><button class="mini" data-copy="${esc(CONFIG.whatsappDisplay)}">Copy number</button></div>
+    <div class="c-card"><span class="c-ico">${ICON.clock}</span><h3>Opening hours</h3><p>${esc(CONFIG.hours)}</p></div>
+    <div class="c-card"><span class="c-ico">${ICON.ig}</span><h3>Instagram</h3><p>${esc(CONFIG.instagramHandle)}</p><p>New collections first</p><a class="mini" href="${CONFIG.instagram}" target="_blank" rel="noopener">Follow us</a></div>
+  </div></section>
+  <section class="wrap">
+    <form class="c-form" id="contactForm" novalidate>
+      <h1 class="title">Contact us</h1>
+      <input id="mName" placeholder="Name" autocomplete="name" aria-label="Name">
+      <input id="mSubject" placeholder="Subject" aria-label="Subject">
+      <input id="mPhone" type="tel" inputmode="tel" placeholder="Your phone" autocomplete="tel" aria-label="Your phone">
+      <textarea id="mMsg" placeholder="Your message" aria-label="Your message"></textarea>
+      <p class="form-err" id="mErr" hidden></p>
+      <button class="btn btn-sand" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21 23 12 2 3v7l15 2-15 2z"/></svg> Send message</button>
+      <div class="ready" id="mReady" hidden><span>Your message is ready.</span><a class="btn btn-wa" id="mSend" target="_blank" rel="noopener" href="#">Send on WhatsApp</a></div>
+    </form>
+  </section>
+  <section class="map">
+    <svg class="mapbg" viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="800" height="340" fill="#EEF0EE"/><path d="M0 0 H260 C 240 80 280 160 230 340 H0Z" fill="#4FB7E5" opacity=".85"/>
+      <g stroke="#FFFFFF" stroke-width="7" fill="none"><path d="M240 40 C 360 70 420 60 800 120"/><path d="M300 340 C 360 230 470 200 800 230"/><path d="M420 0 C 440 120 480 220 470 340"/></g>
+      <g stroke="#F3D58A" stroke-width="5" fill="none"><path d="M250 180 C 400 160 560 190 800 170"/></g>
+      <path d="M470 150 c-12 0-21 9-21 21 0 16 21 38 21 38s21-22 21-38c0-12-9-21-21-21z" fill="#D93025"/><circle cx="470" cy="171" r="7" fill="#7A1210"/>
+    </svg>
+    <div class="map-card"><b>${esc(CONFIG.brand)} · ${esc(CONFIG.showroom)}</b><span class="muted">${esc(CONFIG.area)}</span><div class="map-btns">${CONFIG.showrooms.map(r => `<a class="btn btn-wine sm pill" href="${r.maps}" target="_blank" rel="noopener">${esc(r.name)} on Google Maps</a>`).join("")}</div></div>
+  </section>`;
+}
+
+/* ================================================================
+   CHROME (header, menus, footer) + ROUTER
+   ================================================================ */
+function buildChrome() {
+  document.querySelector(".hdr-in").insertAdjacentHTML("beforeend", `<button class="cart-btn" type="button" data-cart-open aria-label="Open cart">${ICON.cart}<span class="cart-n" data-cart-n hidden>0</span></button>`);
+  document.body.insertAdjacentHTML("beforeend", `
+  <div class="drawer" id="cartDrawer" hidden role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="drawer-bg" data-cart-close></div>
+    <aside class="drawer-panel">
+      <div class="drawer-head"><h2 id="cartTitle">Your cart <span id="cartTitleN"></span></h2><button class="modal-x" type="button" data-cart-close aria-label="Close cart">&times;</button></div>
+      <div class="drawer-body">
+        <div id="cartList"></div>
+        <form id="cartForm" novalidate hidden>
+          <h3>Your details</h3>
+          <div class="field"><label for="oName">Your name</label><input id="oName" autocomplete="name"></div>
+          <div class="field"><label for="oPhone">Phone number</label><input id="oPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 71 123 456"></div>
+          <div class="field"><label for="oRegion">Location</label><select id="oRegion">${CONFIG.regions.map(r => `<option>${esc(r)}</option>`).join("")}</select></div>
+          <div class="field"><label for="oAddress">Address (optional)</label><input id="oAddress" autocomplete="street-address" placeholder="Town, street, building"></div>
+          <div class="field"><label for="oNotes">Notes (optional)</label><input id="oNotes" placeholder="Anything we should know"></div>
+          <p class="form-err" id="oErr" hidden></p>
+          <button class="btn btn-wa full" type="submit">Send order on WhatsApp</button>
+          <p class="wa-note">WhatsApp opens with your full order already written. Just press send.</p>
+          <div class="ready" id="oReady" hidden><span>Your order is ready.</span><a class="btn btn-wa" id="oSend" target="_blank" rel="noopener" href="#">Send on WhatsApp</a></div>
+        </form>
+        <div class="cart-sent" id="cartSent" hidden>
+          <p><b>Order opened in WhatsApp.</b> Once you've pressed send, the team will get back to you to confirm price and delivery.</p>
+          <div class="cart-sent-cta"><button class="btn btn-wine sm pill" type="button" data-cart-clear>Clear cart</button><button class="btn btn-ghost sm pill" type="button" data-cart-close>Keep shopping</button></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <div class="toast" id="toast" hidden role="status" aria-live="polite"></div>`);
+  document.getElementById("socials").innerHTML = `<a class="icon-btn" href="${CONFIG.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${ICON.ig}</a>`;
+  document.getElementById("ddMenu").innerHTML = CATS.map(c => `<div class="dd-item"><a href="#shop-${c.id}">${esc(c.name)} ${ICON.chevR}</a><div class="dd-sub">${c.subs.map(([id, n]) => `<a href="#shop-${id}">${esc(n)}</a>`).join("")}</div></div>`).join("");
+  document.getElementById("mnavIn").innerHTML =
+    `<a href="#home">Home</a><a href="#about">About us</a><a href="#shop">Products</a>${CATS.map(c => `<a class="sub" href="#shop-${c.id}">${esc(c.name)}</a>`).join("")}<a href="#contact">Contact us</a><a class="btn btn-wa" href="${waLink("Hello " + CONFIG.brand + "!")}" target="_blank" rel="noopener">Chat on WhatsApp</a>`;
+  document.getElementById("foot").innerHTML = `
+    <div class="foot"><div class="wrap foot-in">
+      <div><h4>Connect with us</h4><div class="foot-social">
+        <a href="${CONFIG.instagram}" target="_blank" rel="noopener">${ICON.ig} ${esc(CONFIG.instagramHandle)}</a>
+        <a href="${waLink("Hello " + CONFIG.brand + "!")}" target="_blank" rel="noopener">${ICON.phone} ${esc(CONFIG.whatsappDisplay)}</a>
+      </div></div>
+      <div><h4>Quick Links</h4><div class="foot-links">
+        <a href="#contact">-&gt; Contact us</a><a href="#shop">-&gt; All products</a><a href="#about">-&gt; About us</a>${CONFIG.showrooms.map(r => `<a href="${r.maps}" target="_blank" rel="noopener">-&gt; ${esc(r.name)} showroom</a>`).join("")}
+        ${CATS.map(c => `<a href="#shop-${c.id}">-&gt; ${esc(c.name)}</a>`).join("")}
+      </div></div>
+    </div></div>
+    <div class="foot-bar">© ${new Date().getFullYear()} . ALL RIGHTS RESERVED · MATAR FURNITURE</div>`;
+}
+
+let slideTimer = null, slideIdx = 0;
+function showSlide(i) {
+  const slides = document.querySelectorAll(".slide"); if (!slides.length) return;
+  slideIdx = (i + slides.length) % slides.length;
+  slides.forEach((s, k) => {
+    const on = k === slideIdx; s.classList.toggle("on", on); s.setAttribute("aria-hidden", String(!on));
+    s.querySelectorAll("a").forEach(a => on ? a.removeAttribute("tabindex") : a.setAttribute("tabindex", "-1"));
+    if (on) s.querySelectorAll("img[data-src]:not(.ld)").forEach(setSrc);
+  });
+  document.querySelectorAll("#slideDots button").forEach((d, k) => d.classList.toggle("on", k === slideIdx));
+}
+function startSlides() {
+  clearInterval(slideTimer);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  slideTimer = setInterval(() => showSlide(slideIdx + 1), 6000);
+}
+function initCarousels() {
+  document.querySelectorAll("[data-car]").forEach(car => {
+    const id = car.dataset.car, tr = document.getElementById(id), dots = document.getElementById(id + "-dots");
+    const items = tr.children; if (!items.length) return;
+    dots.innerHTML = Array.from(items, (_, i) => `<button data-car-dot="${id}" data-i="${i}" aria-label="Item ${i + 1}"></button>`).join("");
+    const sync = () => {
+      const w = items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(tr).columnGap || 0);
+      const i = Math.round(tr.scrollLeft / (w || 1));
+      dots.querySelectorAll("button").forEach((d, k) => d.classList.toggle("on", k === i));
+      const img = items[0].querySelector(".pcard-img, img"); if (img) car.style.setProperty("--img-h", img.getBoundingClientRect().height + "px");
+    };
+    tr.addEventListener("scroll", () => requestAnimationFrame(sync), { passive: true });
+    sync();
+  });
+}
+
+function route() {
+  const h = decodeURIComponent((location.hash || "#home").slice(1)) || "home";
+  let html, key = h;
+  clearInterval(slideTimer);
+  if (h === "home") html = viewHome();
+  else if (h === "shop") { html = viewShop(null); key = "shop"; }
+  else if (h.startsWith("shop-")) { html = viewShop(h.slice(5)); key = "shop"; }
+  else if (h.startsWith("p-")) { html = viewProduct(h.slice(2)); key = "shop"; }
+  else if (h.startsWith("order=")) { html = viewOrder(h.slice(6)); key = "order"; }
+  else if (h === "about") html = viewAbout();
+  else if (h === "contact") html = viewContact();
+  else { html = viewHome(); key = "home"; }
+  document.body.classList.toggle("is-home", key === "home");
+  const v = document.getElementById("view");
+  v.style.animation = "none"; void v.offsetWidth; v.style.animation = "";
+  v.innerHTML = html;
+  if (key === "shop" && !h.startsWith("p-")) {
+    renderGrid();
+    v.querySelectorAll(".chips,.subchips").forEach(r => { const a = r.querySelector("a.on"); if (a && r.scrollWidth > r.clientWidth) r.scrollLeft += a.getBoundingClientRect().left - r.getBoundingClientRect().left - (r.clientWidth - a.offsetWidth) / 2; });
+  }
+  if (key === "home") { slideIdx = 0; startSlides(); }
+  initCarousels();
+  hydrate(v);
+  if (h.startsWith("p-")) { const pi = document.getElementById("pdImg"); if (pi) setSrc(pi); }
+  document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("on", a.dataset.nav === key));
+  closeMenu();
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+/* ================================================================
+   INTERACTIONS
+   ================================================================ */
+const mnav = document.getElementById("mnav"), burger = document.getElementById("burger");
+function closeMenu() { mnav.hidden = true; burger.setAttribute("aria-expanded", "false"); }
+burger.addEventListener("click", () => { mnav.hidden = !mnav.hidden; burger.setAttribute("aria-expanded", String(!mnav.hidden)); });
+
+const totop = document.getElementById("totop");
+window.addEventListener("scroll", () => totop.classList.toggle("show", scrollY > 500), { passive: true });
+totop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+function showPhoto(i) {
+  const p = pdProduct; if (!p || !p.imgs[i]) return;
+  document.querySelectorAll(".pd-thumbs button").forEach((b, k) => b.classList.toggle("on", k === i));
+  const img = document.getElementById("pdImg");
+  img.dataset.src = big(p, i); img.classList.remove("ld"); setSrc(img);
+  const pc = document.getElementById("pdPc"); if (pc) { pc.textContent = pcAt(p, i); pc.hidden = !pcAt(p, i); }
+}
+
+document.addEventListener("click", (e) => {
+  const c = e.target.closest("[data-add],[data-add-pd],[data-pq],[data-cart-open],[data-cart-close],[data-cart-clear],[data-cq],[data-cx],[data-order-add]");
+  if (c) {
+    if (c.hasAttribute("data-add")) { e.preventDefault(); addToCart(c.dataset.add, 0, 1); }
+    else if (c.hasAttribute("data-add-pd")) { const q = parseInt(document.getElementById("pdQty").textContent, 10) || 1; const p = BYID[c.dataset.addPd]; addToCart(p.id, p.colors ? p.colors.findIndex(x => x.n === pdColor) : -1, q); }
+    else if (c.hasAttribute("data-pq")) { const el = document.getElementById("pdQty"); el.textContent = Math.max(1, Math.min(99, (parseInt(el.textContent, 10) || 1) + Number(c.dataset.pq))); }
+    else if (c.hasAttribute("data-cart-open")) { document.getElementById("toast").hidden = true; openCart(); }
+    else if (c.hasAttribute("data-cart-close")) closeCart();
+    else if (c.hasAttribute("data-cart-clear")) { cart = []; saveCart(); renderCart(); closeCart(); }
+    else if (c.hasAttribute("data-cq")) { const it = cart[Number(c.dataset.cq)]; if (it) { it.q = Math.max(1, Math.min(99, it.q + Number(c.dataset.d))); saveCart(); renderCart(); } }
+    else if (c.hasAttribute("data-cx")) { cart.splice(Number(c.dataset.cx), 1); saveCart(); renderCart(); }
+    else if (c.hasAttribute("data-order-add")) { parseOrder(c.dataset.orderAdd).forEach(it => { const ex = cart.find(x => x.id === it.id && x.c === it.c); if (ex) ex.q = Math.min(99, ex.q + it.q); else cart.push(it); }); saveCart(); openCart(); }
+    return;
+  }
+  const t = e.target.closest("[data-slide],[data-goto],[data-car-go],[data-car-dot],[data-acc],[data-page],[data-color],[data-img],[data-copy]");
+  if (!t) return;
+  if (t.hasAttribute("data-slide")) { showSlide(slideIdx + Number(t.dataset.slide)); startSlides(); }
+  else if (t.hasAttribute("data-goto")) { showSlide(Number(t.dataset.goto)); startSlides(); }
+  else if (t.hasAttribute("data-car-go")) { const tr = document.getElementById(t.dataset.carGo); tr.scrollBy({ left: Number(t.dataset.dir) * tr.clientWidth * .75, behavior: "smooth" }); }
+  else if (t.hasAttribute("data-car-dot")) { const tr = document.getElementById(t.dataset.carDot), it = tr.children[Number(t.dataset.i)]; if (it) tr.scrollTo({ left: it.offsetLeft - tr.offsetLeft, behavior: "smooth" }); }
+  else if (t.hasAttribute("data-acc")) { const box = document.getElementById("acc-" + t.dataset.acc), open = box.hidden; box.hidden = !open; t.textContent = open ? "−" : "+"; t.setAttribute("aria-expanded", String(open)); }
+  else if (t.hasAttribute("data-page")) {
+    if (t.disabled) return;
+    shopState.page = Number(t.dataset.page); renderGrid();
+    document.querySelector(".shop").scrollIntoView({ behavior: "smooth" });
+  }
+  else if (t.hasAttribute("data-color")) {
+    const p = pdProduct, c = p && p.colors && p.colors[Number(t.dataset.color)]; if (!c) return;
+    document.querySelectorAll(".swatch").forEach(s => s.classList.toggle("on", s === t));
+    pdColor = c.n; document.getElementById("pdColorName").textContent = c.n;
+    document.getElementById("pdWa").href = waLink(msgOrder(p, pdColor));
+    document.getElementById("pdCall").href = callLink(p, pdColor);
+    showPhoto(c.i);
+  }
+  else if (t.hasAttribute("data-img")) showPhoto(Number(t.dataset.img));
+  else if (t.hasAttribute("data-copy")) {
+    const done = () => { t.textContent = "Copied"; setTimeout(() => t.textContent = "Copy number", 1600); };
+    const fallback = () => { const n = document.getElementById("waNum"); if (n) { const r = document.createRange(); r.selectNodeContents(n); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } t.textContent = "Selected"; };
+    try { navigator.clipboard.writeText(t.dataset.copy).then(done, fallback); } catch (_) { fallback(); }
+  }
+});
+document.addEventListener("keydown", (e) => { if (e.key !== "Escape") return; if (!drawer().hidden) closeCart(); });
+document.addEventListener("mouseover", (e) => { if (e.target.closest(".slider")) clearInterval(slideTimer); });
+document.addEventListener("mouseout", (e) => { if (e.target.closest(".slider") && !e.relatedTarget?.closest?.(".slider")) startSlides(); });
+
+let qTimer = null;
+document.addEventListener("input", (e) => {
+  if (e.target.id === "q" || e.target.id === "q2") { shopState.q = e.target.value; shopState.page = 1; clearTimeout(qTimer); qTimer = setTimeout(renderGrid, 150); }
+});
+document.addEventListener("change", (e) => { if (e.target.id === "sort") { shopState.sort = e.target.value; shopState.page = 1; renderGrid(); } });
+
+const phoneOk = v => v.replace(/[^\d]/g, "").length >= 7;
+const val = id => document.getElementById(id).value.trim();
+function prepare(prefix, required, build) {
+  const err = document.getElementById(prefix + "Err");
+  for (const [id, msg] of required) { if (!val(id)) { err.textContent = msg; err.hidden = false; return; } }
+  err.hidden = true;
+  const url = waLink(build());
+  document.getElementById(prefix + "Send").href = url;
+  if (openWa(url)) { document.getElementById(prefix + "Ready").hidden = true; return; }
+  document.getElementById(prefix + "Ready").hidden = false;
+}
+function openWa(url) {
+  // one new tab with the message already written; returns false if the browser blocked it
+  let w = null;
+  try { w = window.open(url, "_blank"); } catch (_) {}
+  if (!w) return false;
+  try { w.opener = null; } catch (_) {}
+  return true;
+}
+document.addEventListener("submit", (e) => {
+  const f = e.target;
+  if (f.hasAttribute("data-search")) {
+    e.preventDefault(); shopState.q = f.querySelector("input").value; shopState.page = 1;
+    if (!location.hash.startsWith("#shop")) location.hash = "#shop"; else renderGrid();
+    return;
+  }
+  if (f.id === "cartForm") {
+    e.preventDefault();
+    const err = document.getElementById("oErr"), name = val("oName"), phone = val("oPhone");
+    if (!cart.length) return;
+    if (!name || !phoneOk(phone)) { err.textContent = !name ? "Please enter your name." : "Please enter a phone number with at least 7 digits."; err.hidden = false; return; }
+    err.hidden = true;
+    const url = waLink(cartMessage({ name, phone, region: val("oRegion"), address: val("oAddress"), notes: val("oNotes") }));
+    document.getElementById("oSend").href = url;
+    if (openWa(url)) { document.getElementById("oReady").hidden = true; f.hidden = true; document.getElementById("cartSent").hidden = false; }
+    else document.getElementById("oReady").hidden = false;
+    return;
+  }
+  if (f.id === "msgForm") {
+    e.preventDefault();
+    prepare("g", [["gName", "Please enter your name."], ["gMsg", "Please write your message."]],
+      () => `Hello ${CONFIG.brand},${val("gSubject") ? "\nSubject: " + val("gSubject") : ""}\n${val("gMsg")}\n\nName: ${val("gName")}${val("gPhone") ? "\nPhone: " + val("gPhone") : ""}`);
+    return;
+  }
+  if (f.id === "contactForm") {
+    e.preventDefault();
+    prepare("m", [["mName", "Please enter your name."], ["mMsg", "Please write your message."]],
+      () => `Hello ${CONFIG.brand},${val("mSubject") ? "\nSubject: " + val("mSubject") : ""}\n${val("mMsg")}\n\nName: ${val("mName")}${val("mPhone") ? "\nPhone: " + val("mPhone") : ""}`);
+  }
+});
+window.addEventListener("resize", () => document.querySelectorAll("[data-car]").forEach(car => { const img = car.querySelector(".pcard-img, img"); if (img) car.style.setProperty("--img-h", img.getBoundingClientRect().height + "px"); }));
+
+buildChrome();
+renderCartBadge();
+window.addEventListener("hashchange", route);
+route();
+</script>
+
+</body>
+</html>
